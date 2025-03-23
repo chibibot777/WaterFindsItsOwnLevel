@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Finds Its Own Level</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-primary {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Level</h1>
+        <input type="text" id="handle" class="form-control" placeholder="Enter TikTok or Instagram handle">
+        <button class="btn btn-primary mt-3" onclick="analyzeIQ()">Analyze</button>
+        <div id="result" class="mt-4"></div>
+    </div>
+
+    <script>
+        function analyzeIQ() {
+            let handle = document.getElementById('handle').value;
+            let resultDiv = document.getElementById('result');
+            
+            if (!handle) {
+                resultDiv.innerText = "Please enter a valid handle.";
+                resultDiv.style.color = "#ffcc00";
+                return;
+            }
+            
+            // Placeholder logic: randomly determine IQ status
+            let iqLevel = Math.random() > 0.5 ? "blessed" : "danger";
+            
+            resultDiv.innerText = iqLevel === "blessed" ? "You are blessed." : "You are in danger.";
+            resultDiv.style.color = iqLevel === "blessed" ? "lightgreen" : "red";
+        }
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
